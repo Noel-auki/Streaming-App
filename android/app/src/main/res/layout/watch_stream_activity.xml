@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- IVS Player -->
+    <com.amazonaws.ivs.player.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Autoplay Switch -->
+    <Switch
+        android:id="@+id/autoplaySwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/player_view"
+        android:text="Autoplay"
+        android:textColor="@color/text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- URL Input and Load Button -->
+    <LinearLayout
+        android:id="@+id/inputfieldlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/autoplaySwitch"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="10dp">
+
+        <EditText
+            android:id="@+id/urlField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter Stream URL"
+            android:inputType="textUri"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text"/>
+
+        <Button
+            android:id="@+id/loadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load"
+            android:backgroundTint="#C7315C"
+            android:textColor="@android:color/white"
+            android:background="@drawable/curved_button_background"/>
+    </LinearLayout>
+
+    <!-- Quality Spinner -->
+    <TextView
+        android:id="@+id/qualitytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quality"
+        android:textColor="@color/text"
+        android:layout_below="@id/inputfieldlayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/qualitySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/qualitytext"
+        android:background="@drawable/spinner_background"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="10dp"
+        android:padding="5dp"
+        android:entries="@array/quality_options"
+        android:dropDownWidth="match_parent"
+        android:popupBackground="@drawable/spinner_popup_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/qualitySpinner"
+        android:gravity="center"
+        >
+        <!-- Pause Button -->
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Resume Button -->
+        <Button
+            android:id="@+id/resumeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resume"
+            android:background="@drawable/button_background"
+            android:textColor="@color/text"/>
+
+    </LinearLayout>
+</RelativeLayout>
